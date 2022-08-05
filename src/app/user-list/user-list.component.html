@@ -1,0 +1,28 @@
+<section class=" bg-light">
+
+  <table class="table table-borderless table-hover">
+    <thead class="bg-black text-white">
+      <tr>
+        <th>ID</th>
+        <th>Activo</th>
+        <th>Username</th>
+        <th>Sexo</th>
+        <th>Fecha Nacimiento</th>
+        <th>Password</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of users">
+        <td>{{u.id}}</td>
+        <td>{{u.activo}}</td>
+        <td>{{u.username}}</td>
+        <td>{{u.sexo}}</td>
+        <td>{{u.fecha_nacimiento}}</td>
+        <td>{{u.password}}</td>
+        <td><button class="btn btn-success" (click)="editClicked(u)">Editar</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+</section>

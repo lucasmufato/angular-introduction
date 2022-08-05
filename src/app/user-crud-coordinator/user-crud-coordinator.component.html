@@ -1,0 +1,19 @@
+<section class="container-fluid">
+  <div class="mt-4 p-5 bg-primary text-white rounded">
+    <h1>Users CRUD</h1>
+    <p>Ejemplo para la kata</p>
+  </div>
+
+  <div>
+    <button type="button" class="btn btn-success m-lg-2" (click)="refresh()"> Refrescar lista </button>
+    <button type="button" class="btn btn-info m-lg-2" (click)="newUser()"> Nuevo usuario </button>
+  </div>
+
+  <app-user-list [users]="users" (editUser)="quiereEditarA($event)" ></app-user-list>
+
+</section>
+
+<aside class="offcanvas visible offcanvas-end {{show}}" style="width: 50%;" >
+  <button type="button" class="btn-close" (click)="closeUserForm()"></button>
+  <app-user-form [user]="currentUser" (editUser)="finishedForm()" ></app-user-form>
+</aside>

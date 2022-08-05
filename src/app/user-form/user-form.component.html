@@ -1,0 +1,76 @@
+<section class="container bg-light">
+
+  <h2 class="mt-4 p-5 bg-primary text-white rounded">Usuario nuevo</h2>
+
+  <div class="pt-3">
+
+    <div class="row p-3">
+      <div class="col-2">
+        <div class="input-group">
+          <span class="input-group-text">ID</span>
+          <input type="number" class="form-control" [(ngModel)]="user.id" disabled>
+        </div>
+      </div>
+    </div>
+
+    <div class="row p-3">
+      <div class="col">
+        <label for="username" class="form-label">Username:</label>
+        <input type="text" id="username" class="form-control" [(ngModel)]="user.username">
+      </div>
+      <div class="col">
+        <label for="email" class="form-label">Email:</label>
+        <input type="text" id="email" class="form-control" [(ngModel)]="user.email">
+      </div>
+    </div>
+
+    <div class="row p-3">
+      <div class="col">
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" id="password" class="form-control"  [(ngModel)]="user.password">
+      </div>
+      <div class="col">
+        <label for="password_repeat" class="form-label">Repeat Password:</label>
+        <input type="password" id="password_repeat" class="form-control"  [(ngModel)]="user.repeated_password">
+      </div>
+    </div>
+
+    <div class="row p-3">
+      <div class="col">
+        <label for="fecha_nac" class="form-label">Fecha nacimiento:</label>
+        <input type="date" id="fecha_nac" class="form-control"  [(ngModel)]="user.fecha_nacimiento">
+      </div>
+      <div class="col">
+        <label for="sexo" class="form-label">Sexo:</label>
+        <select id="sexo" class="form-select"  [(ngModel)]="user.sexo">
+          <option>Masculino</option>
+          <option>Femenino</option>
+        </select>
+      </div>
+
+      <div class="col p-3">
+        <div class="form-check form-switch pt-3">
+          <input class="form-check-input" type="checkbox" id="activo" value="activo" checked  [(ngModel)]="user.activo">
+          <label class="form-check-label">Activo</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row p-3">
+      <div class="col d-grid">
+        <button class="btn btn-success" id="boton_crear" (click)="crearPressed($event)" >
+          <span class="spinner-border spinner-border-sm" id="spinner_creando" style="visibility: hidden"></span>
+          Crear
+        </button>
+      </div>
+    </div>
+
+    <div class="row p-4">
+      <ul class="list-group">
+        <li *ngFor="let error of formErrors" class="list-group-item list-group-item-danger m-1"> {{error}} </li>
+      </ul>
+    </div>
+
+  </div>
+
+</section>
